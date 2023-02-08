@@ -1,0 +1,111 @@
+/* Query 1 */
+/* Who is the top-selling Artist for each year? */
+
+
+
+WITH TopArtistsPerYear AS
+  (SELECT STRFTIME('%Y', I.InvoiceDate) AS YEAR,
+          A.Name AS ArtistName,
+          SUM(IL.Quantity * IL.UnitPrice) AS TotalSales
+   FROM InvoiceLine IL
+   JOIN Track T ON IL.TrackID = T.TrackID
+   JOIN Album AM ON T.AlbumID = AM.AlbumID
+   JOIN Artist A ON AM.ArtistID = A.ArtistID
+   JOIN Invoice I ON IL.InvoiceID = I.InvoiceID
+   GROUP BY 1,
+            2
+   ORDER BY 1,
+            3 DESC)
+SELECT YEAR,
+       ArtistName,
+       TotalSales
+FROM TopArtistsPerYear
+WHERE (YEAR,
+       TotalSales) in
+    (SELECT YEAR,
+            MAX(TotalSales)
+     FROM TopArtistsPerYear
+     GROUP BY YEAR);
+
+/* Query 2 */
+/* What is the most popular genre by Country */
+
+
+
+WITH TopGenresPerCountry AS
+  (SELECT C.Country AS Country,
+          G.Name AS Genre,
+          SUM(IL.Quantity) AS TotalTracksSold
+   FROM Invoice I
+   JOIN Customer C ON I.CustomerID = C.CustomerID
+   JOIN InvoiceLine IL ON I.InvoiceID = IL.InvoiceID
+   JOIN Track T ON IL.TrackID = T.TrackID
+   JOIN Genre G ON T.GenreID = G.GenreID
+   GROUP BY 1,
+            2
+   ORDER BY 1,
+            3 DESC)
+SELECT Country,
+       Genre,
+       TotalTracksSold
+FROM TopGenresPerCountry
+WHERE (Country,
+       Genre) IN
+    (SELECT Country,
+            Genre
+     FROM
+       (SELECT C.Country AS Country,
+               G.Name AS Genre,
+               SUM(IL.Quantity) AS TotalTracksSold,
+               RANK() OVER (PARTITION BY Country
+                            ORDER BY SUM(IL.Quantity) DESC) AS Rank
+        FROM Invoice I
+        JOIN Customer C ON I.CustomerID = C.CustomerID
+        JOIN InvoiceLine IL ON I.InvoiceID = IL.InvoiceID
+        JOIN Track T ON IL.TrackID = T.TrackID
+        JOIN Genre G ON T.GenreID = G.GenreID
+        GROUP BY 1,
+                 2)
+     WHERE Rank = 1 )
+ORDER BY 1,
+         3 DESC;
+
+
+
+/* Query 3 */
+/*  What is the Average duration of tracks, measured in minutes, for each genre? */
+
+
+
+SELECT G.Name AS Genre, 
+       ROUND(AVG(T.Milliseconds/60000.0), 2) AS AvgLengthInMinutes
+FROM Track T
+JOIN Genre G ON T.GenreId = G.GenreID
+GROUP BY 1
+HAVING T.MediaTypeId != 3
+ORDER BY 2;
+
+
+/* Query 4 */
+/* Who is the best customer by total purchase from each country? */
+
+SELECT ID,
+       FirstName || ' ' || LastName AS Customer,
+       Country,
+       TotalSpent
+FROM
+  (SELECT C.CustomerId AS ID,
+          C.FirstName AS FirstName,
+          C.LastName AS LastName,
+          C.Country AS Country,
+          SUM(I.Total) AS TotalSpent,
+          RANK() OVER (PARTITION BY Country
+                       ORDER BY SUM(I.Total) DESC) AS Rank
+   FROM Customer C
+   JOIN Invoice I ON C.CustomerId = I.CustomerId
+   GROUP BY 1
+   ORDER BY 4 DESC)
+WHERE Rank = 1
+ORDER BY 4 DESC
+LIMIT 10;
+

@@ -1,0 +1,23 @@
+" What is the Average duration of tracks, measured in minutes, for each genre? ",
+,
+Genre,Avg_Length_In_Minutes
+Rock And Roll,2.24
+Opera,2.91
+Hip Hop/Rap,2.97
+Easy Listening,3.15
+Bossa Nova,3.66
+R&B/Soul,3.67
+World,3.75
+Pop,3.82
+Latin,3.88
+Alternative & Punk,3.91
+Soundtrack,4.07
+Reggae,4.12
+Alternative,4.4
+Blues,4.51
+Rock,4.73
+Jazz,4.86
+Classical,4.9
+Heavy Metal,4.96
+Electronica/Dance,5.05
+Metal,5.16
