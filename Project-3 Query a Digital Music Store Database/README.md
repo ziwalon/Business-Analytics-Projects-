@@ -5,7 +5,7 @@
 
 In this project, you will query the Chinook Database. The Chinook Database holds information about a music store. For this project, you will be assisting the Chinook team with understanding the media in their store, their customers and employees, and their invoice information. To assist you in the queries ahead, the schema for the Chinook Database is provided below. You can see the columns that **link** tables together via the arrows.
 
-! [Chinook Database ERD] () 
+![Chinook Database ERD](https://github.com/ziwalon/Business-Analytics-Projects-/blob/main/Project-3%20Query%20a%20Digital%20Music%20Store%20Database/Database%20ERD.png?raw=true) 
 
 ## Project Overview
 All of the instructions are discussed in detail as you work through this lesson on your way to completing this project.
