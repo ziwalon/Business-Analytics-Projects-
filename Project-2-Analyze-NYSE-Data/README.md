@@ -72,3 +72,45 @@ b. **Your slide presentation** should provide **at least one visualization to he
 - Your assumptions for revenue growth, gross margin, and operating margin should change for each scenario.
 - The forecasting model should be dynamic for the selection of the case (Weak, Base, Strong). However, the forecasting model can be static for the chosen company sticker symbol.
 - _Deliverable:_ Spreadsheet with tab for Forecasting Model
+
+# Solution to the Project 
+### Understanding the Data
+
+- The data that was mostly provided was clean, but I made some changes such as updating the column titles to remove spaces by using underscores and formatting certain column data types to better align with the data.
+- The data contains the following columns 
+  - _**Ticker_Symbol** (Stock Symbol - Abbreciation for a Company's Stock)_
+  - _**Years**_
+  - _**Period Ending**_
+  - _**Total_Revenue**_
+  - _**Cost_of_Good_Sold**_
+  - _**Sales,_General_and_Admin.**_
+  - _**Reasearch_and_Development**_
+  - _**Other_Operating_Items**_
+  - _**GICS_Sector** (Global Industry Classification Standard)_
+  - _**GICS_Sub_Industry**_
+
+### Created the Summary Statistics
+
+- I first had to identify a question about the data that i was interested in answering, the question i asked is, **Which GICS sector spends more in research and development YOY?**  
+- After the inquiry was made, I utilized a pivot table to extract the GICS sector for each year, enabling me to examine the yearly expenditure on research and development in greater detail.
+![R&D_2012-2016]
+- After that i calculated measures of central tendency (mean, median) and measure of spread (standard deviation and range) to get a better understanding of the data. 
+![Summary_Statistics]
+- Furthermore, I incorporated the year-on-year growth rate of research and development expenditure to determine the GICS sectors that experienced an increase or decrease in their spending.
+![Growth_Rate_R&D]
+- After gathering all the relevant data, I generated a bar chart that displayed the research and development expenditure by sector from 2012 to 2016, revealing the sectors that spent more or less. Based on my comprehensive analysis, I concluded with a summary of my findings.
+![Bar_Chart]
+- Once the Excel sheets were completed, I utilized Microsoft PowerPoint to design a slide presentation.
+![Presentation 1]
+![Presentation 2]
+![Presentation 3] 
+
+### Created Dynamic Profit and Loss Statement
+
+- Using an INDEX function that linked to a value from the summary statistics tab and matched it to the year and ticker symbol, I developed a dynamic profit and loss statement for each year that automatically updates based on the selected ticker symbol. This approach allowed for precise calculation of profits and losses.
+![Profit and Loss Statement] 
+
+### Created Financial Forecast
+
+- I adopted a bottom-up methodology to prepare the financial forecast by examining the historical profit and loss data and making assumptions about the behavior of key metrics. Based on this analysis, I projected the revenue, gross profit, and operating profit. 
+![Financial Forecast] 
