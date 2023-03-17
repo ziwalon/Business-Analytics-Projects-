@@ -93,24 +93,24 @@ b. **Your slide presentation** should provide **at least one visualization to he
 
 - I first had to identify a question about the data that i was interested in answering, the question i asked is, **Which GICS sector spends more in research and development YOY?**  
 - After the inquiry was made, I utilized a pivot table to extract the GICS sector for each year, enabling me to examine the yearly expenditure on research and development in greater detail.
-![R&D_2012-2016]
+![R&D_2012-2016](https://github.com/ziwalon/Business-Analytics-Projects-/blob/main/Project-2-Analyze-NYSE-Data/screengrabs/R%26D_2012-2016.png)
 - After that i calculated measures of central tendency (mean, median) and measure of spread (standard deviation and range) to get a better understanding of the data. 
-![Summary_Statistics]
+![Summary_Statistics](https://github.com/ziwalon/Business-Analytics-Projects-/blob/main/Project-2-Analyze-NYSE-Data/screengrabs/Summary_Statistics.png)
 - Furthermore, I incorporated the year-on-year growth rate of research and development expenditure to determine the GICS sectors that experienced an increase or decrease in their spending.
-![Growth_Rate_R&D]
+![Growth_Rate_R&D](https://github.com/ziwalon/Business-Analytics-Projects-/blob/main/Project-2-Analyze-NYSE-Data/screengrabs/Growth_Rate_R%26D.png)
 - After gathering all the relevant data, I generated a bar chart that displayed the research and development expenditure by sector from 2012 to 2016, revealing the sectors that spent more or less. Based on my comprehensive analysis, I concluded with a summary of my findings.
-![Bar_Chart]
+![Bar_Chart](https://github.com/ziwalon/Business-Analytics-Projects-/blob/main/Project-2-Analyze-NYSE-Data/screengrabs/Bar_Chart.png)
 - Once the Excel sheets were completed, I utilized Microsoft PowerPoint to design a slide presentation.
-![Presentation 1]
-![Presentation 2]
-![Presentation 3] 
+![Presentation 1](https://github.com/ziwalon/Business-Analytics-Projects-/blob/main/Project-2-Analyze-NYSE-Data/screengrabs/Presentation%201.png)
+![Presentation 2](https://github.com/ziwalon/Business-Analytics-Projects-/blob/main/Project-2-Analyze-NYSE-Data/screengrabs/Presentation%202.png)
+![Presentation 3](https://github.com/ziwalon/Business-Analytics-Projects-/blob/main/Project-2-Analyze-NYSE-Data/screengrabs/Presentation%203.png) 
 
 ### Created Dynamic Profit and Loss Statement
 
 - Using an INDEX function that linked to a value from the summary statistics tab and matched it to the year and ticker symbol, I developed a dynamic profit and loss statement for each year that automatically updates based on the selected ticker symbol. This approach allowed for precise calculation of profits and losses.
-![Profit and Loss Statement] 
+![Profit and Loss Statement](https://github.com/ziwalon/Business-Analytics-Projects-/blob/main/Project-2-Analyze-NYSE-Data/screengrabs/Profit%20and%20Loss%20Statement%20.png) 
 
 ### Created Financial Forecast
 
 - I adopted a bottom-up methodology to prepare the financial forecast by examining the historical profit and loss data and making assumptions about the behavior of key metrics. Based on this analysis, I projected the revenue, gross profit, and operating profit. 
-![Financial Forecast] 
+![Financial Forecast](https://github.com/ziwalon/Business-Analytics-Projects-/blob/main/Project-2-Analyze-NYSE-Data/screengrabs/Financial%20Forecast.png) 
