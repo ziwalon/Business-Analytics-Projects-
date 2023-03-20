@@ -5,7 +5,7 @@
 
 In this project, you will query the Chinook Database. The Chinook Database holds information about a music store. For this project, you will be assisting the Chinook team with understanding the media in their store, their customers and employees, and their invoice information. To assist you in the queries ahead, the schema for the Chinook Database is provided below. You can see the columns that **link** tables together via the arrows.
 
-![Chinook Database ERD](https://github.com/ziwalon/Business-Analytics-Projects-/blob/main/Project-3%20Query%20a%20Digital%20Music%20Store%20Database/Database%20ERD.png?raw=true) 
+![Chinook Database ERD](https://github.com/ziwalon/Business-Analytics-Projects-/blob/main/Project-3-Query-a-Digital-Music-Store-Database/Images/Database%20ERD.png) 
 
 ## Project Overview
 All of the instructions are discussed in detail as you work through this lesson on your way to completing this project.
@@ -115,7 +115,7 @@ WHERE (YEAR,
 
 - In order to produce a visualization, I exported the data from SQL to Excel and created the table format. 
 
-![Excel Table Format 1]()
+![Excel Table Format 1](https://github.com/ziwalon/Business-Analytics-Projects-/blob/main/Project-3-Query-a-Digital-Music-Store-Database/Images/Excel%20Table%20Format%201.png)
 
 - **Question 2: What is the most popular genre by Country?**
 - **Query 2:**
@@ -160,7 +160,7 @@ ORDER BY 1,
 ```
 - In order to produce a visualization, I exported the data from SQL to Excel and created the table format. 
 
-![Excel Table Format 2]()
+![Excel Table Format 2](https://github.com/ziwalon/Business-Analytics-Projects-/blob/main/Project-3-Query-a-Digital-Music-Store-Database/Images/Excel%20Table%20Format%202.png)
 
 - **Question 3: What is the Average duration of tracks, measured in minutes, for each genre?**
 - **Query 3:**
@@ -175,7 +175,7 @@ ORDER BY 2;
 ```
 - In order to produce a visualization, I exported the data from SQL to Excel and created the table format. 
 
-![Excel Table Format 3]()
+![Excel Table Format 3](https://github.com/ziwalon/Business-Analytics-Projects-/blob/main/Project-3-Query-a-Digital-Music-Store-Database/Images/Excel%20Table%20Format%203.png)
 
 - **Question 4: Who is the best customer by total purchase from each country?**
 - **Query 4:**
@@ -202,16 +202,16 @@ LIMIT 10;
 ```
 - In order to produce a visualization, I exported the data from SQL to Excel and created the table format. 
 
-![Excel Table Format 4]()
+![Excel Table Format 4](https://github.com/ziwalon/Business-Analytics-Projects-/blob/main/Project-3-Query-a-Digital-Music-Store-Database/Images/Excel%20Table%20Format%204.png)
 
 - After querying and gaining insights from the data, I proceeded to create visual representations for each query question to better illustrate the data.
 
-![Presentation 1]()
+![Presentation 1](https://github.com/ziwalon/Business-Analytics-Projects-/blob/main/Project-3-Query-a-Digital-Music-Store-Database/Images/Presentation%201.png)
 
-![Presentation 2]()
+![Presentation 2](https://github.com/ziwalon/Business-Analytics-Projects-/blob/main/Project-3-Query-a-Digital-Music-Store-Database/Images/Presentation%202.png)
 
-![Presentation 3]()
+![Presentation 3](https://github.com/ziwalon/Business-Analytics-Projects-/blob/main/Project-3-Query-a-Digital-Music-Store-Database/Images/Presentation%203.png)
 
-![Presentation 4]()
+![Presentation 4](https://github.com/ziwalon/Business-Analytics-Projects-/blob/main/Project-3-Query-a-Digital-Music-Store-Database/Images/Presentation%204.png)
 
-![Presentation 5]()
+![Presentation 5](https://github.com/ziwalon/Business-Analytics-Projects-/blob/main/Project-3-Query-a-Digital-Music-Store-Database/Images/Presentation%205.png)
