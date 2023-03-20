@@ -1,5 +1,5 @@
 /* Query 1 */
-/* Who is the top selling Artist for each year? */
+/* Who is the top-selling Artist for each year? */
 
 
 

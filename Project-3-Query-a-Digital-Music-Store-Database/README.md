@@ -14,7 +14,7 @@ All of the instructions are discussed in detail as you work through this lesson 
 
 #### Step 1: Get the Chinook database up and running.
 
-You can run the **DB Browser** database on your own machine (See the Set Up the DB Browser Database page) or you can use the provided workspace (see the Chinook Postgres SQL Workspace page).
+You can run the [DB Browser](https://sqlitebrowser.org/dl/) database on your own machine or you can use the provided workspace.
 
 ### Setting up Your Local Environment
 It was great to get started learning SQL here in the classroom, but the way to really master your skills is to get a local setup and learn to work within your own environment.
@@ -37,14 +37,14 @@ DB Browser for SQLite can be downloaded from the [SQLite Browser website](https:
 
 ### Download Database
 
-Database **(chinook.db)** is found on the **Project-3 Query a Digital Music Store Database** folder  
+[Download the Chinook Database](https://github.com/ziwalon/Business-Analytics-Projects-/blob/main/Project-3-Query-a-Digital-Music-Store-Database/chinook-db/chinook_db/chinook.db)  
 
 ### Connect the Browser to the Database
-- [x] Open up DB Browser to SQLite
-- [x] Click on _Open Database_
-- [x] Navigate to the Chinook.db file (probably in your downloads)
-- [x] Click on the _Execute SQL_
-- [x] Start querying your data
+- [x]  Open up DB Browser to SQLite
+- [x]  Click on _Open Database_
+- [x]  Navigate to the Chinook.db file (probably in your downloads)
+- [x]  Click on the _Execute SQL_
+- [x]  Start querying your data
 
 ### Export Data from DB Browser into a Spreadsheet
 
@@ -80,3 +80,138 @@ Then paste your code into a plain text file .txt.
 We suggest using a spreadsheet application, such as Excel or Google Sheets, to create your visualizations. However, you’re welcome to use whatever tool you’d like. Your visualizations could be any that you learned about in the previous lesson.
 
 You should have four slides, but the questions you ask are up to you, and all four of your final submitted queries should contain a **JOIN** and **AGGREGATION**.
+
+# My Project
+
+- When presented with the Chinook Database, I initially wanted to understand the data and establish links between the tables in order to determine the appropriate method for querying the database. Following several practice queries, my interest was piqued. I sought to delve deeper by asking relevant questions that would provide valuable insights into the music store database per the project requirements.
+
+- **Question 1: Who is the top-selling Artist for each year?**
+- **Query 1:**
+```
+WITH TopArtistsPerYear AS
+  (SELECT STRFTIME('%Y', I.InvoiceDate) AS YEAR,
+          A.Name AS ArtistName,
+          SUM(IL.Quantity * IL.UnitPrice) AS TotalSales
+   FROM InvoiceLine IL
+   JOIN Track T ON IL.TrackID = T.TrackID
+   JOIN Album AM ON T.AlbumID = AM.AlbumID
+   JOIN Artist A ON AM.ArtistID = A.ArtistID
+   JOIN Invoice I ON IL.InvoiceID = I.InvoiceID
+   GROUP BY 1,
+            2
+   ORDER BY 1,
+            3 DESC)
+SELECT YEAR,
+       ArtistName,
+       TotalSales
+FROM TopArtistsPerYear
+WHERE (YEAR,
+       TotalSales) in
+    (SELECT YEAR,
+            MAX(TotalSales)
+     FROM TopArtistsPerYear
+     GROUP BY YEAR)
+```
+
+- In order to produce a visualization, I exported the data from SQL to Excel and created the table format. 
+
+![Excel Table Format 1]()
+
+- **Question 2: What is the most popular genre by Country?**
+- **Query 2:**
+```
+WITH TopGenresPerCountry AS
+  (SELECT C.Country AS Country,
+          G.Name AS Genre,
+          SUM(IL.Quantity) AS TotalTracksSold
+   FROM Invoice I
+   JOIN Customer C ON I.CustomerID = C.CustomerID
+   JOIN InvoiceLine IL ON I.InvoiceID = IL.InvoiceID
+   JOIN Track T ON IL.TrackID = T.TrackID
+   JOIN Genre G ON T.GenreID = G.GenreID
+   GROUP BY 1,
+            2
+   ORDER BY 1,
+            3 DESC)
+SELECT Country,
+       Genre,
+       TotalTracksSold
+FROM TopGenresPerCountry
+WHERE (Country,
+       Genre) IN
+    (SELECT Country,
+            Genre
+     FROM
+       (SELECT C.Country AS Country,
+               G.Name AS Genre,
+               SUM(IL.Quantity) AS TotalTracksSold,
+               RANK() OVER (PARTITION BY Country
+                            ORDER BY SUM(IL.Quantity) DESC) AS Rank
+        FROM Invoice I
+        JOIN Customer C ON I.CustomerID = C.CustomerID
+        JOIN InvoiceLine IL ON I.InvoiceID = IL.InvoiceID
+        JOIN Track T ON IL.TrackID = T.TrackID
+        JOIN Genre G ON T.GenreID = G.GenreID
+        GROUP BY 1,
+                 2)
+     WHERE Rank = 1 )
+ORDER BY 1,
+         3 DESC
+```
+- In order to produce a visualization, I exported the data from SQL to Excel and created the table format. 
+
+![Excel Table Format 2]()
+
+- **Question 3: What is the Average duration of tracks, measured in minutes, for each genre?**
+- **Query 3:**
+```
+SELECT G.Name AS Genre, 
+       ROUND(AVG(T.Milliseconds/60000.0), 2) AS AvgLengthInMinutes
+FROM Track T
+JOIN Genre G ON T.GenreId = G.GenreID
+GROUP BY 1
+HAVING T.MediaTypeId != 3
+ORDER BY 2;
+```
+- In order to produce a visualization, I exported the data from SQL to Excel and created the table format. 
+
+![Excel Table Format 3]()
+
+- **Question 4: Who is the best customer by total purchase from each country?**
+- **Query 4:**
+```
+SELECT ID,
+       FirstName || ' ' || LastName AS Customer,
+       Country,
+       TotalSpent
+FROM
+  (SELECT C.CustomerId AS ID,
+          C.FirstName AS FirstName,
+          C.LastName AS LastName,
+          C.Country AS Country,
+          SUM(I.Total) AS TotalSpent,
+          RANK() OVER (PARTITION BY Country
+                       ORDER BY SUM(I.Total) DESC) AS Rank
+   FROM Customer C
+   JOIN Invoice I ON C.CustomerId = I.CustomerId
+   GROUP BY 1
+   ORDER BY 4 DESC)
+WHERE Rank = 1
+ORDER BY 4 DESC
+LIMIT 10;
+```
+- In order to produce a visualization, I exported the data from SQL to Excel and created the table format. 
+
+![Excel Table Format 4]()
+
+- After querying and gaining insights from the data, I proceeded to create visual representations for each query question to better illustrate the data.
+
+![Presentation 1]()
+
+![Presentation 2]()
+
+![Presentation 3]()
+
+![Presentation 4]()
+
+![Presentation 5]()
