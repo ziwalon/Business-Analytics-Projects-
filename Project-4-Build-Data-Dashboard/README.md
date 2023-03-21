@@ -47,4 +47,23 @@ Remember that your visualization should be explanatory in nature and communicate
   - Design: explain any design choices you made including changes to the visualization after collecting feedback
   - Resources: list of Web sites, books, forums, blog posts, GitHub repositories etc that you referred to or used in this submission (Add N/A if you did not use such resources).
 
-**Link to my Tableau project** [2015-U.S. Census Demographic](https://public.tableau.com/app/profile/nolawi/viz/2015-U_S_CensusDemographicAnalysisProject/2015U_S_CensusDemographic)
+# My Project
+
+- I centered my project around the demographic data from the U.S. census, aiming to shed light on population demographics, economic conditions, and transportation methods. To provide an in-depth understanding of these data sets, I utilized three distinct dashboards.
+
+#### Dashboard 1 
+- The first dashboard, "Population Distribution," analyzes the population distribution using a map chart to show population density, a bar chart to display the demographic distribution of various races in each state, and a stacked bar chart to compare population share between men and women. The dashboard also uses a box plot to showcase the distribution of the gender ratio by state and a treemap visualization to display the proportion of citizens in each state. These visualizations provide an intuitive and easily digestible way to understand demographic data. The dashboard employs visually appealing colors and a filter to limit the number of states displayed, making it more accommodating for color-blind viewers.
+
+![Dashboard 1](https://github.com/ziwalon/Business-Analytics-Projects-/blob/main/Project-4-Build-Data-Dashboard/Images/Dashboard%201%20.png)
+
+#### Dashboard 2
+- The second dashboard, "Income, Poverty, and Unemployment," analyzes socio-economic indicators for states using a packed bubble chart to show child poverty numbers by state, a scatter plot to display the relationship between average income and poverty by state, and a text graph to show the unemployment rate by state. The packed bubble chart highlights states with the highest number of children living in poverty, while the scatter plot reveals any relationships between income and poverty by state. The text graph presents the unemployment rate of each state in a straightforward manner and highlights the state with the highest unemployment rate.
+
+![Dashboard 2](https://github.com/ziwalon/Business-Analytics-Projects-/blob/main/Project-4-Build-Data-Dashboard/Images/Dashboard%202.png)
+
+#### Dashboard 3
+- The "Transportation Dashboard" is the third dashboard that provides an analysis of transportation patterns. It displays the mean commute time and the most frequently used modes of transportation in each state. The average commute time is displayed using a bar chart, while a stacked bar chart is used to show the most commonly used mode of transportation in each state.
+
+![Dashboard 3](https://github.com/ziwalon/Business-Analytics-Projects-/blob/main/Project-4-Build-Data-Dashboard/Images/Dashboard%203.png)
+
+[**Link** - 2015-U.S. Census Demographic](https://public.tableau.com/app/profile/nolawi/viz/2015-U_S_CensusDemographicAnalysisProject/2015U_S_CensusDemographic)
