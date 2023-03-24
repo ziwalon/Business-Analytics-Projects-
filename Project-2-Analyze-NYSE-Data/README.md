@@ -73,7 +73,7 @@ b. **Your slide presentation** should provide **at least one visualization to he
 - The forecasting model should be dynamic for the selection of the case (Weak, Base, Strong). However, the forecasting model can be static for the chosen company sticker symbol.
 - _Deliverable:_ Spreadsheet with tab for Forecasting Model
 
-# Solution to the Project 
+# My Project 
 ### Understanding the Data
 
 - The data that was mostly provided was clean, but I made some changes such as updating the column titles to remove spaces by using underscores and formatting certain column data types to better align with the data.
