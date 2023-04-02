@@ -1,8 +1,6 @@
 
 # Udacity Business Analytics Nanodegree
 
-#### Nolawi Adugna
-
 The [Business Analytics](https://www.udacity.com/course/business-analytics-nanodegree--nd098) Nanodegree Program by Udacity is designed to help students gain foundational skills in data analysis and make more data-driven decisions. The program focuses on teaching data analysis skills and tools, including **`Excel`**, **`SQL`**, and **`Tableau`**, to help students manipulate, analyze, and visualize data. The end goal is to equip students with the skills necessary to make informed decisions based on data. The program includes projects designed to reinforce these skills and provide practical experience. This repository contains projects for this program.
 
 # Program Syllabus
@@ -10,6 +8,8 @@ The [Business Analytics](https://www.udacity.com/course/business-analytics-nanod
 ## COURSE 1: Welcome to the Program
 ### Project 1 - Interpret a Data Visualization 
 A large part of working with data is being able to interpret data visualizations and explain your insights to others. This project will build your intuition on working with data dashboards, while also showing you the types of beautiful visualizations you will be able to produce by the end of this program.
+
+[Project 1 - Interpret a Data Visualization](https://github.com/ziwalon/Business-Analytics-Projects-/tree/main/Project-1-Intepret-Data-Visualization)
 
 ## COURSE 2: Introduction to Data
 Learn how to use statistics and visuals to find and communicate insights. Develop Excel skills to manipulate, analyze, and visualize data in a spreadsheet. Build Excel models to analyze possible business outcomes.
@@ -23,6 +23,8 @@ fundamental financial data for 500 companies. You will use spreadsheets to analy
 - Calculate key business metrics in financial analysis and interpret values.
 - Forecast financial metrics using scenario analysis.
 
+[Project 2 - Analyze NYSE Data](https://github.com/ziwalon/Business-Analytics-Projects-/tree/main/Project-2-Analyze-NYSE-Data)
+
 ## COURSE 3: SQL for Data Analysis
 In this project, you will be provided a dataset reflecting data collected from an experiment. You’ll use statistical techniques to answer questions about the data and report your conclusions and recommendations in a report.
 ### Project 3 - Query Digital Music Store Database 
@@ -32,6 +34,8 @@ By the end of this project, you will be able to:
 - Ask a question that requires data from multiple places, join the data together, and answer the question.
 - Install `SQL` on your own machine, upload a database, ask complex questions about the data in a database, and query the database to answer those questions.
 
+[Project 3 - Query Digital Music Store Database](https://github.com/ziwalon/Business-Analytics-Projects-/tree/main/Project-3-Query-a-Digital-Music-Store-Database)
+
 ## COURSE 4: Data Visualization with Tableau
 Sharing insights is an integral part of working with data. In this project, you’ll build interactive dashboards with `Tableau` to tell stories from data. You’ll use a dataset of flight delays in the US to visualize the quality of airlines and airports, find the best times to fly, and more. These types of visualizations help guide decision making to reach the best outcomes.
 ### Project 4 - Build Data Dashboards
@@ -40,9 +44,8 @@ By the end of this project, you will be able to:
 - Evaluate the effectiveness of a data visualization.
 - Build interactive and engaging `Tableau` dashboards.
 
+[Project 4 - Build Data Dashboards](https://github.com/ziwalon/Business-Analytics-Projects-/tree/main/Project-4-Build-Data-Dashboard)
 
+## Certificate of Completion
 
-
-
-
-
+![Certificate of Completion](https://github.com/ziwalon/Business-Analytics-Projects-/blob/main/Business-Analytics-Certificate.png)
